@@ -55,6 +55,6 @@ class NoiseModel:
         #             self.button = 0
         #             ctrl.mouse_click(button=0)
         #             self.hiss_last = now
-        #     self.hiss_start = 0
+        #     self.hiss_start = 0d
 
 model = NoiseModel()

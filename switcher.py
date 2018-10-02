@@ -30,7 +30,6 @@ keymap = {
     'asked judy': lambda x: short_application(x, 'RStudio'),
     'kenotee': lambda x: short_application(x, 'Keynote'),
     'calendii': lambda x: short_application(x, 'Calendar'),
-
 }
 
 ctx.keymap(keymap)
