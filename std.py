@@ -110,6 +110,7 @@ formatters = {
     'string': (False, surround("'")),
     'padded': (False, surround(" ")),
     'rot-thirteen':  (False, rot13),
+    'lower': (False, lambda i, word, _: word.lower()),
 }
 
 def FormatText(m):
