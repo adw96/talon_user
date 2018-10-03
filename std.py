@@ -172,7 +172,7 @@ keymap.update({
     'tilde': '~',
     '(bang | exclamation point)': '!',
     'dollar [sign]': '$',
-    'downscore': '_',
+    '(downscore | crunder)': '_',
     '(semi | semicolon)': ';',
     'colon': ':',
     '(square | left square [bracket])': '[', '(rsquare | are square | right square [bracket])': ']',
@@ -181,10 +181,11 @@ keymap.update({
     '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
 
     '(star | asterisk)': '*',
-    '(pound | hash [sign] | octo | thorpe | number sign)': '#',
+    '(pound | hash [sign] | pounder)': '#',
+    # '(pound | hash [sign] | octo | thorpe | number sign)': '#',
     'percent [sign]': '%',
     'caret': '^',
-    'at sign': '@',
+    '(at sign | loco)': '@',
     '(and sign | ampersand | amper)': '&',
     'pipe': '|',
 
