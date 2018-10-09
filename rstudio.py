@@ -9,6 +9,7 @@ ctx = Context('RStudio', bundle='org.rstudio.RStudio')
 
 ctx.keymap({
 
+<<<<<<< HEAD
 # Amy's implementations
 
 # core
@@ -63,11 +64,20 @@ ctx.keymap({
 # knitr
 
   'run knitter':                   Key('cmd-shift-K'),
+=======
+
+# Amy's implementations
+
+  'get working directory': ['getwd()', Key('left')],
+  'set working directory': ['setwd()', Key('left')],
+
+>>>>>>> 49b2fbbf2b14df554478a8232e1aa5c1dee925cc
 
 # Sean's implementations
 
  # 'jump to line (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+': jump_to_line,
 
+<<<<<<< HEAD
   # 'expand select':                 Key('shift-alt-cmd-up'),
   # 'reduce select':                 Key('shift-alt-cmd-down'),
   # # 'duplicate line': Key('alt-cmd-down'),
@@ -75,6 +85,15 @@ ctx.keymap({
   # 'go to matching':                Key('ctrl-p'),
   #
   # 'pip':                           Key('tab'),
+=======
+  'expand select':                 Key('shift-alt-cmd-up'),
+  'reduce select':                 Key('shift-alt-cmd-down'),
+  # 'duplicate line': Key('alt-cmd-down'),
+
+  'go to matching':                Key('ctrl-p'),
+
+  'pip':                           Key('tab'),
+>>>>>>> 49b2fbbf2b14df554478a8232e1aa5c1dee925cc
 
   # Console
 
@@ -86,7 +105,11 @@ ctx.keymap({
 
   # Source
 
+<<<<<<< HEAD
   # 'go to omni':                    Key('ctrl-.'),
+=======
+  'go to omni':                    Key('ctrl-.'),
+>>>>>>> 49b2fbbf2b14df554478a8232e1aa5c1dee925cc
 
   # 'New document': Key('cmd-shift-N'),
   # 'New document (Chrome only)': Key('cmd-shift-Alt-N'),
@@ -94,15 +117,42 @@ ctx.keymap({
   # 'Save active document': Key('cmd-S'),
   # 'Close active document (except on Chrome)': Key('cmd-W'),
   # 'Close active document (Chrome only)': Key('cmd-alt-W'),
+<<<<<<< HEAD
   # 'Close all tabs':                Key('cmd-shift-W'),
   # 'kniter insert chunk':           Key('cmd-alt-i'),
   # 'Insert code section': Key('cmd-shift-R'),
 
+=======
+  'Close all tabs':                Key('cmd-shift-W'),
+  'run knitter':                   Key('cmd-shift-K'),
+  'kniter insert chunk':           Key('cmd-alt-i'),
+  # 'Insert code section': Key('cmd-shift-R'),
+
+  'eval [that]':                   Key('cmd-enter'),
+  # 'eval current line/selection (retain cursor position)': Key('alt-enter'),
+  'eval previous':                 Key('cmd-shift-P'),
+  # 'eval current document': Key('cmd-alt-R'),
+  'eval from top':                 Key('cmd-alt-b'),
+  'eval to end':                   Key('cmd-alt-e'),
+  'eval (function|funk)':          Key('cmd-alt-f'),
+  # 'eval section':              Key('cmd-alt-t'),
+  'eval (previous|preeve) chunks': Key('cmd-alt-p'),
+  'eval chunk':                    Key('cmd-alt-c'),
+  'eval next chunk':               Key('cmd-alt-n'),
+  # 'Source a file': Key('cmd-shift-O'),
+  'eval all':                      Key('cmd-shift-S'),
+  # 'eval and echo all':         Key('cmd-shift-enter'),
+
+>>>>>>> 49b2fbbf2b14df554478a8232e1aa5c1dee925cc
   # 'Fold Selected': Key('cmd-alt-L'),
   # 'Unfold Selected': Key('cmd-shift-alt-L'),
   # 'Fold All': Key('cmd-alt-O'),
   # 'Unfold All': Key('cmd-shift-alt-O'),
 
+<<<<<<< HEAD
+=======
+  'go to line':                   Key('cmd-shift-alt-G'),
+>>>>>>> 49b2fbbf2b14df554478a8232e1aa5c1dee925cc
   'go to section':                Key('cmd-shift-alt-J'),
 
   'go to tab':                    Key('ctrl-shift-.'),
