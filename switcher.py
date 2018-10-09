@@ -24,10 +24,14 @@ def launch_app(m):
     if path:
         ui.launch(path=path)
 
+def launch_rstudio():
+    launch_app('RStudio')
+
 ctx = Context('switcher')
 ctx.keymap({
     'fox {switcher.running}': switch_app,
     'launch {switcher.launch}': launch_app,
+    'run program': launch_rstudio,
     # 'fox {switcher.apps}': switch_app,
     # 'atomee': lambda x: short_application(x, 'Atom'),
     # 'termee': lambda x: short_application(x, 'Terminal'),

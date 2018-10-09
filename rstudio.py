@@ -10,9 +10,13 @@ ctx = Context('RStudio', bundle='org.rstudio.RStudio')
 ctx.keymap({
 
 
+# Amy's implementations
+
+  'get working directory': ['getwd()', Key('left')],
+  'set working directory': ['setwd()', Key('left')],
 
 
-
+# Sean's implementations
 
  # 'jump to line (0 | oh | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+': jump_to_line,
 
