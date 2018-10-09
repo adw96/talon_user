@@ -18,6 +18,7 @@ keymap = {
   'janice': 'genus',
   'matter genomics': 'metagenomics',
   'meta- genomics': 'metagenomics',
+  'cags': 'CAGs',
 
 
     # 'word get hub': 'github',

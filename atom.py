@@ -1,10 +1,13 @@
-## Amy Willis
-## stolen in almost its entirety from https://github.com/pimentel/talon_user/blob/master/atom.py
-## All errors are my own
+# from https://raw.githubusercontent.com/tuomassalo/atom-talon/master/atom.py
+
+# Be sure to copy the instructions from
+# https://github.com/tuomassalo/atom-talon
+# to integrate with atom
 
 from talon.voice import Key, press, Str, Context
 
-ctx = Context('atom', bundle='com.github.atom')
+## Note to self(Amy): `ctx = Context('atom', bundle='com.github.atom')` doesn't work
+ctx = Context('Atom')
 
 atom_hotkey = 'cmd-shift-ctrl-alt-t'
 
@@ -23,7 +26,6 @@ COMMANDS = Struct(
     MOVE_LINE = 'm',
     SELECT_UNTIL = 'u',
 )
-
 
 ############## support for parsing numbers as command postfix
 
@@ -169,6 +171,7 @@ keymap = {
     'shockey': Key('cmd-shift-enter'),
     'shockoon': Key('cmd-right enter'),
     'sprinkoon' + numerals: jump_to_eol_and(lambda: press('enter')),
+
 }
 
 ctx.keymap(keymap)

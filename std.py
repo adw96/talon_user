@@ -1,5 +1,5 @@
 from talon.voice import Word, Context, Key, Rep, RepPhrase, Str, press
-from talon import ctrl, clip
+from talon import app, ctrl, clip, ui
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
 
@@ -50,6 +50,12 @@ mapping = {
 # used for auto-spacing
 punctuation = set('.,-!?')
 
+def copy_bundle(m):
+    bundle = ui.active_app().bundle
+    clip.set(bundle)
+    app.notify('Copied app bundle', body=bundle)
+
+
 def parse_word(word):
     word = str(word).lstrip('\\').split('\\', 1)[0]
     word = mapping.get(word, word)
@@ -71,11 +77,15 @@ def insert(s):
 
 
 def text(m):
-    insert(join_words(parse_words(m)).lower())
+    # Added 10/9/18 because I want 'I' words to be capitalised automatically
+    insert(join_words(parse_words(m)))
+    # insert(join_words(parse_words(m)).lower())
 
 def sentence_text(m):
-    text = join_words(parse_words(m)).lower()
-    insert(text.capitalize())
+    # text = join_words(parse_words(m)).lower()
+    # Added 10/9/18 because I want 'I' words to be capitalised  automatically
+    text = join_words(parse_words(m))
+    insert(text[0].upper() + text[1:])
 
 def word(m):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
@@ -356,5 +366,13 @@ keymap.update({
 
     'scroll down': [Key('down')] * 30,
     'scroll up': [Key('up')] * 30,
+
+    ## Amy's own commands
+    'save this': Key('cmd-s'),
+    'close tab': Key('cmd-w'),
+
+    'copy bundle': copy_bundle,
+
 })
+
 ctx.keymap(keymap)
