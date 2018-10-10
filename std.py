@@ -370,6 +370,8 @@ keymap.update({
     ## Amy's own commands
     'save this': Key('cmd-s'),
     'close tab': Key('cmd-w'),
+    'dizzle': Key('cmd-z'),
+    'rizzle': Key('cmd-shift-z'),
 
     'copy bundle': copy_bundle,
 
