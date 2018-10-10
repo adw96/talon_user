@@ -21,9 +21,9 @@ def switch_app(m):
 
 def launch_app(m):
     name = str(m['switcher.launch'][0])
-    # print(name)
-    clip.set(name)
-    app.notify('Function name:', body=name)
+    ##  Helpful for debugging:
+    # clip.set(name)
+    # app.notify('Function name:', body=name)
     path = launch.get(name)
     if path:
         ui.launch(path=path)

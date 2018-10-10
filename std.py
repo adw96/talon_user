@@ -110,6 +110,7 @@ formatters = {
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
+    'spine':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
     'dotsway':  (True,  lambda i, word, _: word if i == 0 else '.'+word),
     'smash':  (True,  lambda i, word, _: word),
     # spinal or kebab?
@@ -204,6 +205,7 @@ keymap.update({
     '(dubquote | double quote)': '"',
     'quote': "'",
     'triple quote': "'''",
+    'apostrophe es': "'s", # not working? TODO
     '(dot | period)': '.',
     'comma': ',',
     'swipe': ', ',
@@ -312,6 +314,7 @@ keymap.update({
     'equals': '=',
     'equeft': ' = ',
     '(minus | dash)': '-',
+    'pausa': ' -- ',
     'plus': '+',
     'arrow': '->',
     'rambo': '<-',

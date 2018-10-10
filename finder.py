@@ -16,6 +16,7 @@ ctx.keymap(
         # actions
         "delete that": Key("cmd-backspace"),
         "show package contents": Key("cmd-alt-o"),
+
         # navigation
         "all files": Key("cmd-shift-f"),
         "go to": Key("cmd-shift-g"),
@@ -25,6 +26,6 @@ ctx.keymap(
         "find applications": Key("cmd-shift-a"),
         "find talon": go_to_path("~/.talon/user"),
         "find research": go_to_path("/Users/adwillis/research"),
-        "find research": go_to_path("/Users/adwillis/grants"),
+        "find grants": go_to_path("/Users/adwillis/grants"),
     }
 )
