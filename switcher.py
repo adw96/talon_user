@@ -1,6 +1,7 @@
 ## script from aegis, slack, help channel, October3
 from talon.voice import Word, Context, Key, Rep, Str, press
-from talon import ui
+# from talon import ui, app
+from talon import app, ctrl, clip, ui
 import time
 import os
 
@@ -20,6 +21,9 @@ def switch_app(m):
 
 def launch_app(m):
     name = str(m['switcher.launch'][0])
+    # print(name)
+    clip.set(name)
+    app.notify('Function name:', body=name)
     path = launch.get(name)
     if path:
         ui.launch(path=path)
@@ -28,26 +32,18 @@ def launch_app(m):
 #     press('cmd-space')
 #     Key('r s t u')
 #     press('enter')
-#
-# def launch_rstudio():
-#     switch_app('RStudio'):
+def launch_rstudio(*unneeded):
+    path = launch.get('RStudio')
+    ui.launch(path=path)
 
 ctx = Context('switcher')
 ctx.keymap({
     'fox {switcher.running}': switch_app,
     'launch {switcher.launch}': launch_app,
 
-    # 'do statistics': launch_rstudio,
-    # 'do statistics': launch_rstudio,
+    ## open RStudio with an Australian accent
+    'asked judy': launch_rstudio,
 
-    # 'atomee': lambda x: short_application(x, 'Atom'),
-    # 'termee': lambda x: short_application(x, 'Terminal'),
-    # 'messagey': lambda x: short_application(x, 'Messages'),
-    # 'chromie': lambda x: short_application(x, 'Google Chrome'),
-    # 'messagey': lambda x: short_application(x, 'RStudio'),
-    # 'kenotee': lambda x: short_application(x, 'Keynote'),
-    # 'calendii': lambda x: short_application(x, 'Calendar'),
-    # 'findy': lambda x: short_application(x, 'Finder'),
 })
 
 def update_lists():
