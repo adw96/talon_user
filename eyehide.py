@@ -1,13 +1,13 @@
 import time
-
+from talon_plugins import eye_mouse
 from talon import ctrl, tap, ui, cron
-from eye_mouse import tracker, mouse, Point2d
+# from eye_mouse import tracker, mouse, Point2d
 
 class EyeHide:
     def __init__(self):
         self.job = None
         self.show = False
-        tracker.register('post:gaze', self.on_gaze)
+        eye_mouse.tracker.register('post:gaze', self.on_gaze)
         ui.register('win_focus', self.on_focus)
         ui.register('app_activate', self.on_focus)
 
