@@ -49,7 +49,7 @@ def mouse_release(m):
 
 keymap = {
     'righty': delayed_right_click,
-    'oh': delayed_click,
+    'po': delayed_click,
     'dubbo': delayed_dubclick,
     'trippo': delayed_tripclick,
     # 'click': delayed_click,

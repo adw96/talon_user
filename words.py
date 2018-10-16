@@ -1,28 +1,43 @@
-from talon.voice import Context, Key
+from talon.voice import Context, Key, Str
 
-ctx = Context('amywords')
+ctx = Context('words')
+def shrink_word(m):
+    word = str(m.dgndictation[0]._words[0]).lower()
+    if not word in shrink_map:
+        raise Exception('%s not in shrink map' % word)
+    Str(shrink_map[word])(None)
 
 keymap = {
+    # # abbreviations
+    # 'e jee': 'e.g., ',
 
-# names
-  'brian': ' Bryan',
-  'daniella': ' Daniela',
+    # names
+      'brian': 'Bryan',
+      'daniella': 'Daniela',
 
-# software
-  'corn cob': 'corncob',
+    # software
+      'corn cob': 'corncob',
 
-# statistics
-  'spine p values': 'p-values',
+    # statistics
+      'p values': 'p-values',
+      'p value': 'p-value',
 
-# microbiome
-  'janice': 'genus',
-  'matter genomics': 'metagenomics',
-  'meta- genomics': 'metagenomics',
-  'cags': 'CAGs',
+    # microbiome
+      'cags': 'CAGs',
+      'janice': 'genus',
+      '(matter genomics) | (meta- genomics)': 'metagenomics',
+      '(matter genomic) | (meta- genomic)': 'metagenomic',
+      '(matter genome) | (meta- genome)': 'metagenome',
+      'g nine': 'genome', 
 
+    'shrink <dgndictation>': shrink_word,
+}
 
-    # 'word get hub': 'github',
-    # 'title get hub': 'GitHub',
+shrink_map = {
+
+    'administrator': 'admin',
+    'et cetera': 'etc.',
+
 }
 
 ctx.keymap(keymap)

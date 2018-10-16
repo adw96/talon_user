@@ -100,6 +100,7 @@ ctx.keymap({
 
   # evaluating code
     'evaluate':        Key('cmd-enter'),
+    'run it':        Key('cmd-enter'),
     'evaluate previous':     Key('cmd-shift-P'),
     'evaluate from top':     Key('cmd-alt-b'),
     'evaluate to end':       Key('cmd-alt-e'),

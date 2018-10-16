@@ -172,6 +172,34 @@ keymap = {
     'shockoon': Key('cmd-right enter'),
     'sprinkoon' + numerals: jump_to_eol_and(lambda: press('enter')),
 
+    # general
+    'option menu': Key('cmd-shift-p'),
+    'right pain': Key('cmd-k cmd-right'),
+    'left pain': Key('cmd-k cmd-left'),
+
+    # latextools
+    'build PDF': Key('alt-cmd-b'),
+
+    # papers
+    'insert citation': Key('ctrl-m'),
+    'insert site': ['\\citep{}', Key('left')], 
+
+    # enumerate
+    'begin innumerate': '\\begin{enumerate}',
+    'end innumerate': '\\end{enumerate}',
+    'insert item': '\\item ',
+    'insert framework': ['\\begin{enumerate}', Key('enter'), Key('enter'), '\\end{enumerate}', Key('up'), '\\item '],
+
+    # itemise
+    'begin itemise': '\\begin{itemize}',
+    'end itemise': '\\end{itemize}',
+    'insert item': '\\item ',
+    'insert itemize framework': ['\\begin{itemize}', Key('enter'), Key('enter'), '\\end{itemize}', Key('up'), '\\item '],
+
+
+    'insert section': ['\\section{}', Key('left')],
+    'insert subsection': ['\\subsection{}', Key('left')],
+
 }
 
 ctx.keymap(keymap)
