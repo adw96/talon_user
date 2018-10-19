@@ -1,6 +1,7 @@
 import time
-from talon_plugins import eye_mouse
 from talon import ctrl, tap, ui, cron
+from talon_plugins.eye_mouse import tracker, mouse, Point2d
+from talon_plugins import eye_mouse
 
 class EyeHide:
     def __init__(self):
