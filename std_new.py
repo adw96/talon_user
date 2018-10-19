@@ -3,44 +3,6 @@ from talon import app, ctrl, clip, ui
 from talon_init import TALON_HOME, TALON_PLUGINS, TALON_USER
 import string
 
-alpha_alt = 'air bat cap die each fail gone harm sit jury crash look mad near odd pit quest red sun trap urge vest whale box yes zip'.split()
-###
-alnum = list(zip(alpha_alt, string.ascii_lowercase)) + [(str(i), str(i)) for i in range(0, 10)]
-
-alpha = {}
-alpha.update(dict(alnum))
-alpha.update({'ship %s' % word: letter for word, letter in zip(alpha_alt, string.ascii_uppercase)})
-
-# modifier key mappings
-fkeys = [(f'F {i}', f'f{i}') for i in range(1, 13)]
-keys = [
-    'left', 'right', 'up', 'down', 'shift', 'tab', 'escape', 'enter', 'space',
-    'backspace', 'delete', 'home', 'pageup', 'pagedown', 'end',
-]
-keys = alnum + [(k, k) for k in keys]
-keys += [
-    ('tinker', '`'),
-    ('comma', ','),
-    ('dot', '.'),
-    ('slash', '/'),
-    ('(semi | semicolon)', ';'),
-    ('quote', "'"),
-    ('[left] square', '['),
-    ('(right | are) square', ']'),
-    ('backslash', '\\'),
-    ('minus', '-'),
-    ('equals', '='),
-] + fkeys
-alpha.update({word: Key(key) for word, key in fkeys})
-alpha.update({'control %s' % k: Key('ctrl-%s' % v) for k, v in keys})
-alpha.update({'control shift %s' % k: Key('ctrl-shift-%s' % v) for k, v in keys})
-alpha.update({'control alt %s' % k: Key('ctrl-alt-%s' % v) for k, v in keys})
-alpha.update({'command %s' % k: Key('cmd-%s' % v) for k, v in keys})
-alpha.update({'command shift %s' % k: Key('cmd-shift-%s' % v) for k, v in keys})
-alpha.update({'command alt shift %s' % k: Key('cmd-alt-shift-%s' % v) for k, v in keys})
-alpha.update({'alt %s' % k: Key('alt-%s' % v) for k, v in keys})
-alpha.update({'alt shift %s' % k: Key('alt-%s' % v) for k, v in keys})
-
 # cleans up some Dragon output from <dgndictation>
 mapping = {
     'semicolon': ';',
@@ -49,12 +11,6 @@ mapping = {
 }
 # used for auto-spacing
 punctuation = set('.,-!?')
-
-def copy_bundle(m):
-    bundle = ui.active_app().bundle
-    clip.set(bundle)
-    app.notify('Copied app bundle', body=bundle)
-
 
 def parse_word(word):
     word = str(word).lstrip('\\').split('\\', 1)[0]
@@ -75,17 +31,17 @@ def parse_words(m):
 def insert(s):
     Str(s)(None)
 
-
 def text(m):
     # Added 10/9/18 because I want 'I' words to be capitalised automatically
     insert(join_words(parse_words(m)))
     # insert(join_words(parse_words(m)).lower())
 
+
 def sentence_text(m):
-    # text = join_words(parse_words(m)).lower()
+    # text = join_words(parse_words(m)).lower() ## from repo
     # Added 10/9/18 because I want 'I' words to be capitalised  automatically
     text = join_words(parse_words(m))
-    insert(text[0].upper() + text[1:])
+    insert(text.capitalize())
 
 def word(m):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
@@ -110,19 +66,17 @@ formatters = {
     'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
-    'spine':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
-    'dotsway':  (True,  lambda i, word, _: word if i == 0 else '.'+word),
     'smash':  (True,  lambda i, word, _: word),
     # spinal or kebab?
-    'kebab':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
-    # 'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
+    'spine':  (True,  lambda i, word, _: word if i == 0 else '-'+word),
+    'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
     'title':  (False, lambda i, word, _: word.capitalize()),
+    # 'squash':  (False, lambda i, word, _: word.lower()),
     'allcaps': (False, lambda i, word, _: word.upper()),
     'dubstring': (False, surround('"')),
     'string': (False, surround("'")),
     'padded': (False, surround(" ")),
     'rot-thirteen':  (False, rot13),
-    'squash': (False, lambda i, word, _: word.lower()),
 }
 
 def FormatText(m):
@@ -155,67 +109,50 @@ def FormatText(m):
         sep = ''
     Str(sep.join(words))(None)
 
-ctx = Context('input')
+def copy_bundle(m):
+    bundle = ui.active_app().bundle
+    clip.set(bundle)
+    app.notify('Copied app bundle', body='{}'.format(bundle))
 
-keymap = {}
-keymap.update(alpha)
-keymap.update({
+ctx = Context('input')
+ctx.keymap({
+    'say <dgndictation> [over]': text,
     'phrase <dgndictation> [over]': text,
+    # TODO: try to rewire myself
+    # 'phrase <dgndictation> [over]': text,
 
     'sentence <dgndictation> [over]': sentence_text,
     'comma <dgndictation> [over]': [', ', text],
     'period <dgndictation> [over]': ['. ', sentence_text],
-    'more <dgndictation> [over]': [' ', text],
+    'space <dgndictation> [over]': [' ', text],
     'word <dgnwords>': word,
 
     '(%s)+ [<dgndictation>]' % (' | '.join(formatters)): FormatText,
 
-    'tab':   Key('tab'),
-    'left':  Key('left'),
-    'right': Key('right'),
-    'up':    Key('up'),
-    'down':  Key('down'),
-
-    'delete': Key('backspace'),
+    # more keys and modifier keys are defined in basic_keys.py
 
     'slap': [Key('cmd-right enter')],
-    'enter': Key('enter'),
-    'escape': Key('esc'),
-    'questo': '?',
+    '(question | questo)': '?',
+    'swipe': ', ',
     'tilde': '~',
     '(bang | exclamation point)': '!',
     'dollar [sign]': '$',
     'crunder': '_',
-    '(semi | semicolon)': ';',
     'colon': ':',
-    '(square | left square [bracket])': '[',
-    '(rsquare | are square | right square [bracket])': ']',
-    '(paren | left paren)': '(',
-    '(rparen | are paren | right paren)': ')',
-    '(brace | left brace)': '{',
-    '(rbrace | are brace | right brace)': '}',
-    '(angle | left angle)': '<',
-    '(rangle | are angle | right angle)': '>',
+    '(paren | left paren)': '(', '(rparen | are paren | right paren)': ')',
+    '(brace | left brace)': '{', '(rbrace | are brace | right brace)': '}',
+    '(angle | left angle | less than)': '<', '(rangle | are angle | right angle | greater than)': '>',
 
     '(star | asterisk)': '*',
-    '(pound | hash [sign] | pounder)': '#',
-    # '(pound | hash [sign] | octo | thorpe | number sign)': '#',
-    'percent [sign]': '%',
+    '(pound | pounder | hash [sign] | octo | thorpe | number sign)': '#',
+    'percy': '%',
     'caret': '^',
-    '(at sign | loco)': '@',
+    'loco': '@',
     '(and sign | ampersand | amper)': '&',
     'spike': '|',
 
     '(dubquote | double quote)': '"',
-    'quote': "'",
     'triple quote': "'''",
-    'apostrophe es': "'s", # not working? TODO
-    '(dot | period)': '.',
-    'comma': ',',
-    'swipe': ', ',
-    'space': ' ',
-    '[forward] slash': '/',
-    'backslash': '\\',
 
     '(dot dot | dotdot)': '..',
     'cd': 'cd ',
@@ -261,9 +198,10 @@ keymap.update({
     # 'tip double': 'double ',
 
     'args': ['()', Key('left')],
-    'index': ['[]', Key('left')],
-    'kirk': ['{}', Key('left')],
-    'block': [' {}', Key('left enter enter up tab')],
+    'prex': ['()', Key('left')],
+    'brax': ['[]', Key('left')],
+    # 'index': ['[]', Key('left')],
+    'kirk': ['{}', Key('left')], # [' {}', Key('left enter enter up tab')],
     'empty array': '[]',
     'empty dict': '{}',
 
@@ -280,66 +218,64 @@ keymap.update({
     'state import': 'import ',
     'state class': 'class ',
 
-    'state include': '#include ',
-    'state include system': ['#include <>', Key('left')],
-    'state include local': ['#include ""', Key('left')],
-    'state type deaf': 'typedef ',
-    'state type deaf struct': ['typedef struct {\n\n};', Key('up'), '\t'],
+    # 'state include': '#include ',
+    # 'state include system': ['#include <>', Key('left')],
+    # 'state include local': ['#include ""', Key('left')],
+    # 'state type deaf': 'typedef ',
+    # 'state type deaf struct': ['typedef struct {\n\n};', Key('up'), '\t'],
 
     'comment see': '// ',
     'comment py': '# ',
 
-    'word queue': 'queue',
-    'word eye': 'eye',
-    'word bson': 'bson',
-    'word iter': 'iter',
-    'word no': 'NULL',
-    'word cmd': 'cmd',
-    'word dup': 'dup',
-    'word streak': ['streq()', Key('left')],
-    'word printf': 'printf',
-    'word (dickt | dictionary)': 'dict',
-    'word shell': 'shell',
+    # 'word queue': 'queue',
+    # 'word eye': 'eye',
+    # 'word bson': 'bson',
+    # 'word iter': 'iter',
+    # 'word no': 'NULL',
+    # 'word cmd': 'cmd',
+    # 'word dup': 'dup',
+    # 'word streak': ['streq()', Key('left')],
+    # 'word printf': 'printf',
+    # 'word (dickt | dictionary)': 'dict',
+    # 'word shell': 'shell',
 
-    'word lunixbochs': 'lunixbochs',
+    # 'word lunixbochs': 'lunixbochs',
     'word talon': 'talon',
-    'word Point2d': 'Point2d',
-    'word Point3d': 'Point3d',
-    'title Point': 'Point',
-    'word angle': 'angle',
+    # 'word Point2d': 'Point2d',
+    # 'word Point3d': 'Point3d',
+    # 'title Point': 'Point',
+    # 'word angle': 'angle',
 
-    'dunder in it': '__init__',
-    'self taught': 'self.',
-    'dickt in it': ['{}', Key('left')],
-    'list in it': ['[]', Key('left')],
-    'string utf8': "'utf8'",
-    'state past': 'pass',
+    # 'dunder in it': '__init__',
+    # 'self taught': 'self.',
+    # 'dickt in it': ['{}', Key('left')],
+    # 'list in it': ['[]', Key('left')],
+    # 'string utf8': "'utf8'",
+    # 'state past': 'pass',
 
-    'equals': '=',
-    'equeft': ' = ',
-    '(minus | dash)': '-',
-    'pausa': ' -- ',
+# amy mods
     'plus': '+',
     'arrow': '->',
-    'rambo': '<-',
     'call': '()',
     'indirect': '&',
     'dereference': '*',
-    '(op equals | assign)': ' = ',
-    'op (minus | subtract)': ' - ',
-    'op (plus | add)': ' + ',
-    'op (times | multiply)': ' * ',
-    'op divide': ' / ',
-    'op mod': ' % ',
-    '[op] (minus | subtract) equals': ' -= ',
-    '[op] (plus | add) equals': ' += ',
-    '[op] (times | multiply) equals': ' *= ',
-    '[op] divide equals': ' /= ',
-    '[op] mod equals': ' %= ',
+    'equeft': ' = ',
+    # 'op (minus | subtract)': ' - ',
+    # 'op (plus | add)': ' + ',
+    # 'op (times | multiply)': ' * ',
+    # 'op divide': ' / ',
+    # 'op mod': ' % ',
+    # '[op] (minus | subtract) equals': ' -= ',
+    # '[op] (plus | add) equals': ' += ',
+    # '[op] (times | multiply) equals': ' *= ',
+    # '[op] divide equals': ' /= ',
+    # '[op] mod equals': ' %= ',
 
     # '(op | is) greater [than]': ' > ',
     # '(op | is) less [than]': ' < ',
+    # '(op | is) equal': ' == ',
     'longqual': ' == ',
+    'pausa': ' -- ',
     # '(op | is) not equal': ' != ',
     # '(op | is) greater [than] or equal': ' >= ',
     # '(op | is) less [than] or equal': ' <= ',
@@ -381,7 +317,4 @@ keymap.update({
     'rizzle': Key('cmd-shift-z'),
 
     'copy bundle': copy_bundle,
-
 })
-
-ctx.keymap(keymap)
