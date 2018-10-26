@@ -182,13 +182,14 @@ keymap = {
 
     # papers
     'insert citation': Key('ctrl-m'),
-    'insert site': ['\\citep{}', Key('left')], 
+    'insert site': ['\\citep{}', Key('left')],
 
     # enumerate
     'begin innumerate': '\\begin{enumerate}',
     'end innumerate': '\\end{enumerate}',
     'insert item': '\\item ',
     'insert framework': ['\\begin{enumerate}', Key('enter'), Key('enter'), '\\end{enumerate}', Key('up'), '\\item '],
+    'insert equation': ['\\begin{align}', Key('enter'), Key('enter'), '\\end{align}', Key('up')],
 
     # itemise
     'begin itemise': '\\begin{itemize}',
@@ -196,10 +197,16 @@ keymap = {
     'insert item': '\\item ',
     'insert itemize framework': ['\\begin{itemize}', Key('enter'), Key('enter'), '\\end{itemize}', Key('up'), '\\item '],
 
-
+    # sectioning
     'insert section': ['\\section{}', Key('left')],
     'insert subsection': ['\\subsection{}', Key('left')],
 
-}
+    # math
+    'maths BBM': ['\\mathbbm{}', Key('left')],
+    'maths cow': ['\\mathcal{}', Key('left')],
 
+    'insert fraction': ['\\frac{}{}', Key('left'), Key('left'), Key('left')],
+    'insert parentheses':  ['\\left(\\right)', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
+    'insert square brackets':  ['\\left[\\right]', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
+}
 ctx.keymap(keymap)

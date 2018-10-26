@@ -23,6 +23,7 @@ symbols = {
     'R square': ']', 'right square': ']',
     'forward slash': '/', 'slash': '/',
     'backslash': '\\',
+    'shalls': '\\',
     'minus': '-', 'dash': '-',
     'equals': '=',
 }
@@ -35,7 +36,6 @@ modifiers = {
 }
 keys = {
     'delete': 'backspace',
-    'backspace': 'right backspace',
 }
 
 alphabet = dict(zip(alpha_alt, string.ascii_lowercase))

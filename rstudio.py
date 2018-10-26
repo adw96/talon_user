@@ -77,14 +77,15 @@ def jump_to_eol_and(then):
     return fn
 
 def toggle_comments(*unneeded):
-   press('cmd-shift-c')
+   Key('cmd-shift-c')
 
 ctx.keymap({
 
 #### MOVING AROUND
     'spring' + numerals: jump_to_bol,
-    'trundle': toggle_comments,
-    'trundle' + numerals: jump_to_bol_and(toggle_comments),
+    # 'trundle': toggle_comments,
+    # 'trundle' + numerals: jump_to_bol_and(toggle_comments),
+    'trundle':         Key('cmd-shift-C'),
     'reindent':         Key('cmd-i'),
 
   # base R functions
@@ -101,14 +102,14 @@ ctx.keymap({
   # evaluating code
     'evaluate':        Key('cmd-enter'),
     'run it':        Key('cmd-enter'),
-    'evaluate previous':     Key('cmd-shift-P'),
-    'evaluate from top':     Key('cmd-alt-b'),
-    'evaluate to end':       Key('cmd-alt-e'),
-    'evaluate (function|funk)':    Key('cmd-alt-f'),
-    'evaluate (previous|preeve) chunks': Key('cmd-alt-p'),
-    'evaluate chunk':        Key('cmd-alt-c'),
-    'evaluate next chunk':         Key('cmd-alt-n'),
-    'evaluate all':          Key('cmd-shift-S'),
+    # 'evaluate previous':     Key('cmd-shift-P'),
+    # 'evaluate from top':     Key('cmd-alt-b'),
+    # 'evaluate to end':       Key('cmd-alt-e'),
+    # 'evaluate (function|funk)':    Key('cmd-alt-f'),
+    # 'evaluate (previous|preeve) chunks': Key('cmd-alt-p'),
+    # 'evaluate chunk':        Key('cmd-alt-c'),
+    # 'evaluate next chunk':         Key('cmd-alt-n'),
+    # 'evaluate all':          Key('cmd-shift-S'),
 
   # finding
     'Find and Replace':       Key('cmd-f'),
@@ -129,7 +130,7 @@ ctx.keymap({
     'D-plier bind rows':      'bind_rows(',
 
   # ggplot
-    'word G G plot':    'ggplot(',
+    'G G plot':    'ggplot(',
     'G G aesthetic':    'aes(',
     'geom point':       'geom_point(',
     'geom line':        'geom_line(',
@@ -149,6 +150,7 @@ ctx.keymap({
   # knitr
 
     'run knitter':       Key('cmd-shift-k'),
+    'insert knitter chunk':       Key('cmd-alt-i'),
 
   # magrittr
 
