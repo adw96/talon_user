@@ -74,13 +74,14 @@ formatters = {
 
     ## about cases
     'squash':  (False, lambda i, word, _: word.lower()),
+    'lower':  (False, lambda i, word, _: word.lower()),
     'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
     'title':  (False, lambda i, word, _: word.capitalize()),
     'allcaps': (False, lambda i, word, _: word.upper()),
     'yeller': (False, lambda i, word, _: word.upper()),
 
     'dubstring': (False, surround('"')),
-    'string': (False, surround("'")),
+    # 'string': (False, surround("'")),
     'padded': (False, surround(" ")),
     'rot-thirteen':  (False, rot13),
 }
@@ -159,7 +160,7 @@ ctx.keymap({
     'spike': '|',
 
     '(dubquote | double quote)': '"',
-    'triple quote': "'''",
+    # 'triple quote': "'''",
 
     '(dot dot | dotdot)': '..',
 
@@ -205,6 +206,7 @@ ctx.keymap({
     ## Amy's own commands
     'save this': Key('cmd-s'),
     'close tab': Key('cmd-w'),
+    'quit program': Key('cmd-q'),
     'dizzle': Key('cmd-z'),
     'rizzle': Key('cmd-shift-z'),
 

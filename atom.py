@@ -174,8 +174,8 @@ keymap = {
 
     # general
     'option menu': Key('cmd-shift-p'),
-    'right pain': Key('cmd-k cmd-right'),
-    'left pain': Key('cmd-k cmd-left'),
+    '(right pain) | (pain right)': Key('cmd-k cmd-right'),
+    '(left pain) | (pain left)': Key('cmd-k cmd-left'),
 
     # latextools
     'build PDF': Key('alt-cmd-b'),
@@ -202,6 +202,8 @@ keymap = {
     'insert subsection': ['\\subsection{}', Key('left')],
 
     # math
+    'insert bold text': ['\\textbf{}', Key('left')],
+    'insert italics': ['\\textit{}', Key('left')],
     'maths BBM': ['\\mathbbm{}', Key('left')],
     'maths cow': ['\\mathcal{}', Key('left')],
 

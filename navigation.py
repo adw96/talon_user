@@ -51,8 +51,8 @@ keymap = {
     'shroom': Key('shift-down'),
     'scram': Key('alt-shift-left'),
     'scrish': Key('alt-shift-right'),
-    '(schrim | shift left)': Key('shift-left'),
-    '(shrish | shift right)': Key('shift-right'),
+    # '(schrim | shift left)': Key('shift-left'),
+    # '(shrish | shift right)': Key('shift-right'),
 
 
     # Requires activation of System Preferences -> Shortcuts -> Input Sources

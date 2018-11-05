@@ -5,6 +5,7 @@ ctx = Context('vocab_amy')
 
 ctx.vocab = [
     # important to keep this in alphabetical order!
+    # 'batch effects', 
     'Bryan',
 
     'CAGs',
@@ -12,6 +13,7 @@ ctx.vocab = [
 
     'gene',
     'genome',
+    'genomes',
     'genus',
 
 

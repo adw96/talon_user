@@ -13,5 +13,6 @@ ctx.keymap({
     # slack
     'open Talon slack': ['talonvoice.slack.com/', Key('Enter'), Key('Enter')],
     'open omics slack': ['omicshour.slack.com', Key('Enter'), Key('Enter')],
+    'open lab slack': ['statdivlab.slack.com', Key('Enter'), Key('Enter')],
 
 })
