@@ -105,6 +105,9 @@ def snipline():
     press('ctrl-a')
     press('cmd-left')
 
+# def recenter():
+#     press('up')
+#     press('down')
 
 def get_first_word(m):
     return str(m.dgndictation[0]._words[0])
@@ -210,5 +213,8 @@ keymap = {
     'insert fraction': ['\\frac{}{}', Key('left'), Key('left'), Key('left')],
     'insert parentheses':  ['\\left(\\right)', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
     'insert square brackets':  ['\\left[\\right]', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
+
+    # 'Reese': recenter(),
+
 }
 ctx.keymap(keymap)

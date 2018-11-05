@@ -5,7 +5,7 @@ ctx = Context('vocab_amy')
 
 ctx.vocab = [
     # important to keep this in alphabetical order!
-    # 'batch effects', 
+    # 'batch effects',
     'Bryan',
 
     'CAGs',
@@ -20,6 +20,7 @@ ctx.vocab = [
     'metagenome',
     'metagenomic',
     'metagenomics',
+    'mock', 
     'modeling',
 
     'OTU',

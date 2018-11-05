@@ -128,6 +128,7 @@ ctx.keymap({
     'D-plier inner join':     'inner_join(',
     'D-plier left join':      'left_join(',
     'D-plier bind rows':      'bind_rows(',
+    'D-plier ungroup':      'ungroup(',
 
   # ggplot
     'G G plot':    'ggplot(',
