@@ -15,7 +15,7 @@ class EyeHide:
         ctrl.cursor_visible(self.show)
 
     def on_gaze(self, b):
-        if mouse.last_ctrl and mouse.break_force > 6:
+        if mouse.last_ctrl and mouse.break_force > 6 or not eye_mouse.config.control_mouse:
             self.cursor(True)
         else:
             try:

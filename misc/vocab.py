@@ -9,7 +9,9 @@ ctx.vocab = [
     'Bryan',
 
     'CAGs',
+    'confirmatory',
     'corncob',
+
 
     'gene',
     'genome',
@@ -20,14 +22,17 @@ ctx.vocab = [
     'metagenome',
     'metagenomic',
     'metagenomics',
-    'mock', 
+    'mock',
     'modeling',
 
     'OTU',
 
+    'Poisson',
     'p-value',
     'p-values',
 
+    'rarefying',
+    
     'talon',
     'taxa',
     'taxon',
@@ -44,8 +49,6 @@ ctx.vocab_remove = [
     'Gino',
 
     'Jean',
-
-    'modelling',
 
     'P value',
     'P values',

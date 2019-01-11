@@ -201,6 +201,7 @@ keymap = {
     'insert itemize framework': ['\\begin{itemize}', Key('enter'), Key('enter'), '\\end{itemize}', Key('up'), '\\item '],
 
     # sectioning
+    'insert ref': ['\\ref{}', Key('left')],
     'insert section': ['\\section{}', Key('left')],
     'insert subsection': ['\\subsection{}', Key('left')],
 

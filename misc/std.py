@@ -130,7 +130,6 @@ ctx.keymap({
 
     'sentence <dgndictation> [over]': sentence_text,
     'comma <dgndictation> [over]': [', ', text],
-    'period <dgndictation> [over]': ['. ', sentence_text],
     'space <dgndictation> [over]': [' ', text],
     'word <dgnwords>': word,
 

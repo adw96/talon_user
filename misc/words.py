@@ -14,6 +14,7 @@ keymap = {
 
     'Mark': 'mock', 
 
+    'poison': 'Poisson',
 }
 
 ctx.keymap(keymap)
