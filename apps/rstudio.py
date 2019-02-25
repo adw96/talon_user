@@ -150,7 +150,7 @@ ctx.keymap({
 
   # knitr
 
-    'run knitter':       Key('cmd-shift-k'),
+    'build PDF':       Key('cmd-shift-k'),
     'insert knitter chunk':       Key('cmd-alt-i'),
 
   # magrittr

@@ -65,7 +65,7 @@ def rot13(i, word, _):
 formatters = {
 
     ## about spacing/characters
-    'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
+    # 'dunder': (True,  lambda i, word, _: '__%s__' % word if i == 0 else word),
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
     'dotsway':  (True,  lambda i, word, _: word if i == 0 else '.'+word),
@@ -74,11 +74,14 @@ formatters = {
 
     ## about cases
     'squash':  (False, lambda i, word, _: word.lower()),
-    'lower':  (False, lambda i, word, _: word.lower()),
-    'sentence':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
-    'title':  (False, lambda i, word, _: word.capitalize()),
-    'allcaps': (False, lambda i, word, _: word.upper()),
     'yeller': (False, lambda i, word, _: word.upper()),
+
+
+    # experimenting with new words
+    'tiptoe':  (False, lambda i, word, _: word.capitalize()), # previously "title"
+    'sento':  (False, lambda i, word, _: word.capitalize() if i == 0 else word), # previously "sentence"
+    'loepoe':  (False, lambda i, word, _: word.lower()), # previously "lower"
+    # 'lower':  (False, lambda i, word, _: word.lower()),
 
     'dubstring': (False, surround('"')),
     # 'string': (False, surround("'")),
@@ -128,7 +131,7 @@ ctx.keymap({
     # TODO: try to rewire myself
     # 'phrase <dgndictation> [over]': text,
 
-    'sentence <dgndictation> [over]': sentence_text,
+    'sento <dgndictation> [over]': sentence_text,
     'comma <dgndictation> [over]': [', ', text],
     'space <dgndictation> [over]': [' ', text],
     'word <dgnwords>': word,
@@ -206,8 +209,6 @@ ctx.keymap({
     'save this': Key('cmd-s'),
     'close tab': Key('cmd-w'),
     'quit program': Key('cmd-q'),
-    'dizzle': Key('cmd-z'),
-    'rizzle': Key('cmd-shift-z'),
 
     'copy bundle': copy_bundle,
 })

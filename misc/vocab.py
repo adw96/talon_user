@@ -12,6 +12,7 @@ ctx.vocab = [
     'confirmatory',
     'corncob',
 
+    'Daniela',
 
     'gene',
     'genome',
@@ -22,17 +23,19 @@ ctx.vocab = [
     'metagenome',
     'metagenomic',
     'metagenomics',
+    'metaphlan',
     'mock',
     'modeling',
 
     'OTU',
 
+    'pangenomic',
     'Poisson',
     'p-value',
     'p-values',
 
     'rarefying',
-    
+
     'talon',
     'taxa',
     'taxon',
@@ -45,6 +48,7 @@ ctx.vocab_remove = [
     'Brian',
 
     'Daniel',
+    'Daniella',
 
     'Gino',
 

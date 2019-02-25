@@ -6,13 +6,16 @@ ctx = Context('words')
 # Check out vocab.py for adding and removing vocab
 keymap = {
 
-    'batch of facts': 'batch effects',
+    # 'batch of facts': 'batch effects',
 
     'D-plier': 'dplyr',
 
     'fee': 'phi',
 
-    'Mark': 'mock', 
+    'Lavender': 'lambda',
+    'Lander': 'lambda',
+
+    'Mark': 'mock',
 
     'poison': 'Poisson',
 }

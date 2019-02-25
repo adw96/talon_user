@@ -36,13 +36,13 @@ keymap = {
     'lefty': Key('cmd-left'),
     'crimp': Key('left'),
     'chris': Key('right'),
-    'gup': Key('up'),
+    'jeep': Key('up'),
     'doom':  Key('down'),
 
     'scroll down': [Key('down')] * 30,
-    '(doomway | scroll way down)': Key('cmd-down'),
+    '(doomway | doom way)': Key('cmd-down'),
     'scroll up': [Key('up')] * 30,
-    '(jeepway | scroll way up)': Key('cmd-up'),
+    '(jeepway | jeep way)': Key('cmd-up'),
 
     # selecting
     'shreepway': Key('cmd-shift-up'),
@@ -51,8 +51,8 @@ keymap = {
     'shroom': Key('shift-down'),
     'scram': Key('alt-shift-left'),
     'scrish': Key('alt-shift-right'),
-    # '(schrim | shift left)': Key('shift-left'),
-    # '(shrish | shift right)': Key('shift-right'),
+    '(schrim | shift left)': Key('shift-left'),
+    '(shrish | shift right)': Key('shift-right'),
 
 
     # Requires activation of System Preferences -> Shortcuts -> Input Sources
@@ -110,22 +110,6 @@ keymap = {
     # 'slurp': Key('backspace delete'),
     # 'trough': Key('alt-backspace'),
 
-    # moving
-    # '(tab | tarp)': Key('tab'),
-    'tarp': Key('tab'),
-    'tarsh': Key('shift-tab'),
-    # 'slap': [Key('cmd-right enter')],
-    # 'peg': Key('alt-left'),
-    # 'fran': Key('alt-right'),
-    'ricky': Key('cmd-right'),
-    'derek': Key('cmd-right space'),
-    'lefty': Key('cmd-left'),
-    'jeep': Key('up'),
-    # 'lloyd':  Key('left'),
-    'chris': Key('right'),
-    'doom':  Key('down'),
-    'doom way': Key('cmd-down'),
-    'jeep way': Key('cmd-up'),
 
     # zooming
     'zoom in': Key('cmd-='),

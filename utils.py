@@ -5,121 +5,14 @@ import itertools
 from talon import clip
 from talon.voice import Str, Key, press
 from time import sleep
+import json
+import os
 
-mapping = {
-    "semicolon": ";",
-    "new-line": "\n",
-    "new-paragraph": "\n\n",
-    "teak": "k",
-    "virg": "v",
-    "zug": "s",
-    "pre-": "pre",
-    "in turn": "intern",
-    "re- factor": "refactor",
-    "re- factoring": "refactoring",
-    "e-mail": "email",
-    "fulsome": "folsom",
-    "thumbs down": ":-1:",
-    "thumbs-down": ":-1:",
-    "thumbs up": ":+1:",
-    "thumbs-up": ":+1:",
-    "okay hand": ":ok_hand:",
-    "thinking face": ":thinking_face:",
-    "in-line": "in line",
-    "jupiter": "jupyter",
-    "pie": "py",
-    ".pie": ".py",
-    "dot pie": ".py",
-    "dot by": ".py",
-    "dot hi": ".py",
-    ".hi": ".py",
-    ". hi": ".py",
-    ".by": ".py",
-    "dot shell": ".sh",
-    "self-taught": "self.",
-    "self-doubt": "self.",
-    "pip installed": "pip install",
-    "rapper": "wrapper",
-    "stack trace": "stacktrace",
-    "repose": "repos",
-    "ellis": "elif",
-    "tubal": "tuple",
-    "deck": "deque",
-    "log it's": "logits",
-    "sell": "cell",
-    "jeep you": "gpu",
-    "endo": "end",
-    "and oh": "end",
-    "rappers": "wrappers",
-    "poynter": "pointer",
-    "numb": "num",
-    "gnome": "num",
-    "don": "done",
-    "jet": "git",
-    "g cloud": "gcloud",
-    "voice code": "voicecode",
-    "nirvana": "nervana",
-    "terrace": "keras",
-    "karis": "keras",
-    "me on": "neon",
-    "cube nets": "kubernetes",
-    "q burnett": "kubernetes",
-    "cooper9": "kubernetes",
-    "expand dimms": "expand dims",
-    "dimms": "dims",
-    "dems": "dims",
-    "seek to seek": "Seq2Seq",
-    "data set": "dataset",
-    "data loader": "dataloader",
-    "call back": "callback",
-    "jim": "gym",
-    "angie": "ng",
-    "and g": "ng",
-    "mg": "ng",
-    "mp": "np",
-    "and p": "np",
-    "all the rhythms": "algorithms",
-    "all rhythms": "algorithms",
-    "waits": "weights",
-    "wait": "weight",
-    "dk": "decay",
-    "epoque": "epoch",
-    "epic": "epoch",
-    "epoques": "epochs",
-    "epics": "epochs",
-    "1 hot": "onehot",
-    "one hot": "onehot",
-    "scaler": "scalar",
-    "sql light": "sqlight",
-    "post gress": "postgres",
-    "sink": "sync",
-    "and betting": "embedding",
-    "I am betting": "embedding",
-    "I'm betting": "embedding",
-    "phil": "fill",
-    "gam": "gan",
-    "gann": "gan",
-    "ncloud interactive": "ncloud interact",
-    "adam": "atom",
-    "pseudo-": "sudo",
-    "pipe": "|",
-    "apt get": "apt-get",
-    "macron": "make run",
-    "make show": "make shell",
-    "standard out": "stdout",
-    "standard in": "stdin",
-    "standard error": "stderr",
-    "les": "less",
-    "doctor": "docker",
-    "communities": "kubernetes",
-    "shall": "shell",
-    "backslash": "\\",
-    "jet tub": "github",
-    "jet hub": "github",
-    "ron": "run",
-    "thorpe": "\t",
-    "tharp": "\t",
-}
+from .bundle_groups import TERMINAL_BUNDLES, FILETYPE_SENSITIVE_BUNDLES
+
+VIM_IDENTIFIER = "(Vim)"
+
+mapping = json.load(open(os.path.join(os.path.dirname(__file__), "replace_words.json")))
 mappings = collections.defaultdict(dict)
 for k, v in mapping.items():
     mappings[len(k.split(" "))][k] = v
@@ -352,6 +245,7 @@ def preserve_clipboard(fn):
     return wrapped_function
 
 
+
 # The. following function is used to be able to repeat commands by following it by one or several numbers, e.g.:
 # 'delete' + optional_numerals: repeat_function(1, 'delete'),
 def repeat_function(numberOfWordsBeforeNumber, keyCode, delay=0):
@@ -366,3 +260,30 @@ def repeat_function(numberOfWordsBeforeNumber, keyCode, delay=0):
             press(keyCode)
 
     return repeater
+
+
+def delay(amount=0.1):
+    return lambda _: sleep(amount)
+
+def is_in_bundles(bundles):
+    return lambda app, win: any(b in app.bundle for b in bundles)
+
+def is_vim(app, win):
+    if is_in_bundles(TERMINAL_BUNDLES)(app, win):
+        if VIM_IDENTIFIER in win.title:
+            return True
+    return False
+
+def is_not_vim(app, win):
+    return not is_vim(app, win)
+
+def is_filetype(extensions=()):
+    def matcher(app, win):
+        if is_in_bundles(FILETYPE_SENSITIVE_BUNDLES)(app, win):
+            if any(ext in win.title for ext in extensions):
+                return True
+            else:
+                return False
+        return True
+
+    return matcher
