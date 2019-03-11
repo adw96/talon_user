@@ -6,6 +6,7 @@ ctx = Context('vocab_amy')
 ctx.vocab = [
     # important to keep this in alphabetical order!
     # 'batch effects',
+    'bias',
     'Bryan',
 
     'CAGs',
@@ -13,23 +14,29 @@ ctx.vocab = [
     'corncob',
 
     'Daniela',
+    'denoising',
 
     'gene',
     'genome',
     'genomes',
     'genus',
+    'Gitana',
 
+    'itemize',
 
+    'Mauricio',
     'metagenome',
-    'metagenomic',
+    # 'metagenomic',
     'metagenomics',
     'metaphlan',
+    'MGS',
     'mock',
     'modeling',
 
     'OTU',
 
     'pangenomic',
+    'phyla',
     'Poisson',
     'p-value',
     'p-values',
@@ -51,12 +58,17 @@ ctx.vocab_remove = [
     'Daniella',
 
     'Gino',
+    'gonna',
+
+    'itemise',
 
     'Jean',
 
+    
     'P value',
     'P values',
 
     'tax',
+    'Tobias',
 
 ]

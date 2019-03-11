@@ -146,7 +146,7 @@ def select_until(m):
 keymap = {
     # 'sprinkle' + optional_numerals: jump_to_bol,
     "spring" + numerals: jump_to_bol,
-    
+
     'dear' + optional_numerals: jump_to_eol_and(lambda: None),
     'smear' + optional_numerals: jump_to_eol_and(jump_to_nearly_end_of_line),
     'trundle': toggle_comments,
@@ -193,6 +193,7 @@ keymap = {
     'insert item': '\\item ',
     'insert framework': ['\\begin{enumerate}', Key('enter'), Key('enter'), '\\end{enumerate}', Key('up'), '\\item '],
     'insert equation': ['\\begin{align}', Key('enter'), Key('enter'), '\\end{align}', Key('up')],
+    'insert align': ['\\begin{align}', Key('enter'), Key('enter'), '\\end{align}', Key('up')],
 
     # itemise
     'begin itemise': '\\begin{itemize}',
