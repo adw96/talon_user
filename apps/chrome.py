@@ -6,6 +6,11 @@ ctx = Context('Chrome', bundle='com.google.Chrome')
 
 ctx.keymap({
 
+    # Google Docs
+    'strikethrough': Key('cmd-shift-x'),
+    'superscript': Key('cmd-.'),
+    'subscript': Key('cmd-,'), 
+
     # email
     'open work email': ['mail.google.com/mail/u/0/#inbox', Key('Enter'), Key('Enter')],
     'open personal email': ['mail.google.com/mail/u/1/', Key('Enter'), Key('Enter')],

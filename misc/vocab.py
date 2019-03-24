@@ -15,6 +15,9 @@ ctx.vocab = [
 
     'Daniela',
     'denoising',
+    'divnet',
+
+    'estimand',
 
     'gene',
     'genome',
@@ -33,10 +36,12 @@ ctx.vocab = [
     'mock',
     'modeling',
 
+    'omics', 
     'OTU',
 
     'pangenomic',
     'phyla',
+    'phylodivnet',
     'Poisson',
     'p-value',
     'p-values',
@@ -48,6 +53,7 @@ ctx.vocab = [
     'taxon',
     'tibble',
 
+    'unifrac',
 
 ]
 
@@ -64,7 +70,7 @@ ctx.vocab_remove = [
 
     'Jean',
 
-    
+
     'P value',
     'P values',
 
