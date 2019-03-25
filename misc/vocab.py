@@ -1,11 +1,15 @@
 from talon.voice import Context
 
-# I'm using this to replace my use of words.py
+# Remappings go in words.py, new vocab and deleting existing vocab goes in vocab.py
+
 ctx = Context('vocab_amy')
 
 ctx.vocab = [
     # important to keep this in alphabetical order!
     # 'batch effects',
+
+    'anova',
+
     'bias',
     'Bryan',
 
@@ -25,7 +29,9 @@ ctx.vocab = [
     'genus',
     'Gitana',
 
-    'itemize',
+    'identifiability',
+
+    'lambda',
 
     'Mauricio',
     'metagenome',
@@ -33,10 +39,12 @@ ctx.vocab = [
     'metagenomics',
     'metaphlan',
     'MGS',
+    'microbiome',
+    'misc',
     'mock',
     'modeling',
 
-    'omics', 
+    'omics',
     'OTU',
 
     'pangenomic',
@@ -55,6 +63,12 @@ ctx.vocab = [
 
     'unifrac',
 
+    # Add American English :(
+    'analyze', 'analyzing',
+    'generalize', 'generalized',
+    'itemize',
+    'rigorous',
+
 ]
 
 ctx.vocab_remove = [
@@ -63,18 +77,24 @@ ctx.vocab_remove = [
     'Daniel',
     'Daniella',
 
+    'filer',
+
     'Gino',
     'gonna',
 
-    'itemise',
-
     'Jean',
-
 
     'P value',
     'P values',
 
     'tax',
     'Tobias',
+
+    # Remove Australian English :(
+    'analyse', 'analysing',
+    'generalise', 'generalised',
+    'itemise',
+    'rigourous',
+
 
 ]

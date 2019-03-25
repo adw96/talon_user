@@ -2,8 +2,8 @@ from talon.voice import Context, Key, Str
 
 ctx = Context('words')
 
-# This is for remapping certain words to others
-# Check out vocab.py for adding and removing vocab
+# Remapping is go in words.py, new vocab and deleting existing vocab goes in vocab.py
+
 keymap = {
 
     'batch of facts': 'batch effects',
@@ -23,7 +23,7 @@ keymap = {
     'Mark': 'mock',
 
     'poison': 'Poisson',
-    'filer': 'phyla', 
+    # 'filer': 'phyla',
     # 'Tobias': 'to bias',
 }
 
