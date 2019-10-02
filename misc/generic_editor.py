@@ -224,12 +224,7 @@ def word_prev(m):
     for i in range(0, end_position - start_position):
         press("shift-left")
 
-
 ctx.keymap({
-    # META
-    "sage": Key("cmd-s"),
-    "dizzle": Key("cmd-z"),
-    "rizzle": Key("cmd-shift-z"),
 
     # MOTIONS
     'spring' + optional_numerals: jump_to_eol_and(jump_to_beginning_of_text),

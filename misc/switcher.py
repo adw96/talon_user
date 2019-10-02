@@ -38,7 +38,7 @@ def launch_rstudio(*unneeded):
 
 ctx = Context('switcher')
 ctx.keymap({
-    'fox {switcher.running}': switch_app,
+    # 'fox {switcher.running}': switch_app,
     'launch {switcher.launch}': launch_app,
 
     ## open RStudio with an Australian accent

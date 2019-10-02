@@ -7,12 +7,12 @@ ctx = Context('words')
 keymap = {
 
     'batch of facts': 'batch effects',
-    'bays': 'Bayes',
     'beige and': 'Bayesian',
+    'Peter': 'beta',
+
+    # 'Kaunda': 'conda',
 
     'D-plier': 'dplyr',
-
-    'fee': 'phi',
 
     'hi dimensional': 'high dimensional',
 
@@ -22,7 +22,14 @@ keymap = {
     'Maceo': 'Mauricio',
     'Mark': 'mock',
 
+
     'poison': 'Poisson',
+    'python': 'python', 
+
+
+    'stat Dev lab': 'Stat Div Lab',
+
+    # 'Theron': 'theorem',
     # 'filer': 'phyla',
     # 'Tobias': 'to bias',
 }

@@ -151,7 +151,7 @@ keymap = {
     'smear' + optional_numerals: jump_to_eol_and(jump_to_nearly_end_of_line),
     'trundle': toggle_comments,
     'trundle' + numerals: jump_to_bol_and(toggle_comments),
-    'jolt': Key('cmd-x cmd-v cmd-v'),
+    # 'jolt': Key('cmd-x cmd-v cmd-v'),
 
     'snipline' + optional_numerals: jump_to_bol_and(snipline),
 
@@ -216,7 +216,17 @@ keymap = {
     'insert parentheses':  ['\\left(\\right)', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
     'insert square brackets':  ['\\left[\\right]', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
 
-    # 'Reese': recenter(),
+    'insert frame': ['\\frame{', Key('enter'), '\\frametitle{', Key('right'), Key('enter'), Key('left'), Key('left')],
+
+    'insert grey text': ['\\textcolor{grey}{}', Key('left')],
+    'insert orange text': ['\\textcolor{orange}{}', Key('left')],
+    'insert purple text': ['\\textcolor{mypurple}{}', Key('left')],
+
+    'insert matrix': ['\\begin{matrix} \\end{matrix}', Key('left')],
+
+    'L darts': ['\\ldots'],
+    'no tag': ['\\notag'],
+
 
 }
 ctx.keymap(keymap)

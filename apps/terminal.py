@@ -34,5 +34,7 @@ ctx.keymap({
     # 'run make': 'make\n',
     # 'run jobs': 'jobs\n',
 
-    'open Talon directory': ['cd ~/.talon/user/', Key('Enter')]
+    'open Talon directory': ['cd ~/.talon/user/', Key('Enter')], 
+
+    'Kunda activate': ['conda activate ']
 })

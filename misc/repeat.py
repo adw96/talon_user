@@ -22,11 +22,11 @@ def repeat(m):
 ctx.keymap(
     {
         "repple | wink": Rep(1),
-        "creek": RepPhrase(1),
-        "soup": Rep(2),
-        "trace": Rep(3),
-        "quarr": Rep(4),
-        "fypes": Rep(5),
+        # "creek": RepPhrase(1),
+        # "soup": Rep(2),
+        # "trace": Rep(3),
+        # "quarr": Rep(4),
+        # "fypes": Rep(5),
         "(repeat | repple)" + utils.numerals: repeat,
     }
 )

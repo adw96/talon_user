@@ -69,6 +69,7 @@ formatters = {
     'camel':  (True,  lambda i, word, _: word if i == 0 else word.capitalize()),
     'snake':  (True,  lambda i, word, _: word if i == 0 else '_'+word),
     'dotsway':  (True,  lambda i, word, _: word if i == 0 else '.'+word),
+    'pathway':  (True,  lambda i, word, _: word if i == 0 else '/'+word),
     'smash':  (True,  lambda i, word, _: word),
     'spine':  (True,  lambda i, word, _: word if i == 0 else '-'+word), # spinal or kebab?
 
@@ -76,12 +77,10 @@ formatters = {
     'squash':  (False, lambda i, word, _: word.lower()),
     'yeller': (False, lambda i, word, _: word.upper()),
 
-
     # experimenting with new words
-    'tiptoe':  (False, lambda i, word, _: word.capitalize()), # previously "title"
-    'sento':  (False, lambda i, word, _: word.capitalize() if i == 0 else word), # previously "sentence"
-    'loepoe':  (False, lambda i, word, _: word.lower()), # previously "lower"
-    # 'lower':  (False, lambda i, word, _: word.lower()),
+    'tiptoe':  (False, lambda i, word, _: word.capitalize()),
+    'sento':  (False, lambda i, word, _: word.capitalize() if i == 0 else word),
+    'loepoe':  (False, lambda i, word, _: word.lower()),
 
     'dubstring': (False, surround('"')),
     # 'string': (False, surround("'")),
@@ -141,7 +140,7 @@ ctx.keymap({
     # more keys and modifier keys are defined in basic_keys.py
 
     'slap': [Key('cmd-right enter')],
-    '(question | questo)': '?',
+    'questo': '?',
     'swipe': ', ',
     'tilde': '~',
     'bang': '!',
@@ -176,6 +175,12 @@ ctx.keymap({
     'comment see': '// ',
     'comment py': '# ',
     'dot py': '.py',
+    'dot MD': '.md',
+
+    # META
+    "save this": Key("cmd-s"), # previously Sage
+    "dizzle": Key("cmd-z"),
+    "rizzle": Key("cmd-shift-z"),
 
     # amy mods
     'plus': '+',
@@ -206,7 +211,6 @@ ctx.keymap({
     'scroll up': [Key('up')] * 30,
 
     ## Amy's own commands
-    'save this': Key('cmd-s'),
     'close tab': Key('cmd-w'),
     'quit program': Key('cmd-q'),
 
