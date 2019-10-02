@@ -25,9 +25,14 @@ Amy
 
 
 Amy Willis, Ph.D.
+
 Assistant Professor
+
 Department of Biostatistics
+
 School of Public Health
+
 University of Washington, Seattle, WA 
+
 [statisticaldiversitylab.com](statisticaldiversitylab.com)
 
