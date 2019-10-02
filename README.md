@@ -3,6 +3,7 @@ Amy's user folder for talon
 
 # What is this?
 
+```
 Hello person-who-has-found-their-way-here!
 
 I have had acute tendonitis for about five years now, which causes me a lot of pain while typing (and writing). As a statistician and programmer, I was worried that my career would be over if I couldn't type, but I took a break and I made some major adjustments to how I do my work and I've managed to be productive for the last few years.
@@ -25,4 +26,5 @@ F-657, Box 357232
 Health Sciences Building, 1959 NE Pacific St
 University of Washington, Seattle, WA 98195
 (206) 543 8027
-statisticaldiversitylab.com
+[statisticaldiversitylab.com](statisticaldiversitylab.com)
+```
