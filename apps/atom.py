@@ -151,29 +151,7 @@ keymap = {
     'smear' + optional_numerals: jump_to_eol_and(jump_to_nearly_end_of_line),
     'trundle': toggle_comments,
     'trundle' + numerals: jump_to_bol_and(toggle_comments),
-    # 'jolt': Key('cmd-x cmd-v cmd-v'),
-
-    'snipline' + optional_numerals: jump_to_bol_and(snipline),
-
-    'snipple': [Key(atom_hotkey), Key(COMMANDS.DELETE_TO_BOL)],
-    'snipper': [Key(atom_hotkey), Key(COMMANDS.DELETE_TO_EOL)],
-
-    # needs bracket-matcher atom package; still a bit poor.
-    'bracken': [Key('cmd-ctrl-m')],
-
     'copy line' + numerals: copy_line,
-    'move line' + numerals: move_line,
-
-    'crew <dgndictation>': find_next,
-    'trail <dgndictation>': find_previous,
-
-    'shackle': Key('cmd-l'),
-    'selrang' + numerals: select_lines,
-    'salty' + numerals: select_until,
-
-    'shockey': Key('cmd-shift-enter'),
-    'shockoon': Key('cmd-right enter'),
-    'sprinkoon' + numerals: jump_to_eol_and(lambda: press('enter')),
 
     # general
     'option menu': Key('cmd-shift-p'),
@@ -210,9 +188,11 @@ keymap = {
     'insert bold text': ['\\textbf{}', Key('left')],
     'insert italics': ['\\textit{}', Key('left')],
     'maths BBM': ['\\mathbbm{}', Key('left')],
+    'bold mouth': ['\\mathbf{}', Key('left')],
     'maths cow': ['\\mathcal{}', Key('left')],
 
     'insert fraction': ['\\frac{}{}', Key('left'), Key('left'), Key('left')],
+    'insert sum': ['\\sum_{}^{}', Key('left'), Key('left'), Key('left'), Key('left')],
     'insert parentheses':  ['\\left(\\right)', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
     'insert square brackets':  ['\\left[\\right]', Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left'), Key('left')],
 
@@ -227,6 +207,32 @@ keymap = {
     'L darts': ['\\ldots'],
     'no tag': ['\\notag'],
 
+    # knitr
+    'insert knitter chunk': ['```{r}```', Key('left'), Key('left'), Key('left'), Key('enter'), Key('enter'), Key('up')],
+    'rambo': [' <- '],
 
 }
 ctx.keymap(keymap)
+
+# 'jolt': Key('cmd-x cmd-v cmd-v'),
+
+# 'snipline' + optional_numerals: jump_to_bol_and(snipline),
+#
+# 'snipple': [Key(atom_hotkey), Key(COMMANDS.DELETE_TO_BOL)],
+# 'snipper': [Key(atom_hotkey), Key(COMMANDS.DELETE_TO_EOL)],
+#
+# # needs bracket-matcher atom package; still a bit poor.
+# 'bracken': [Key('cmd-ctrl-m')],
+
+# 'move line' + numerals: move_line,
+
+# 'crew <dgndictation>': find_next,
+# 'trail <dgndictation>': find_previous,
+
+# 'shackle': Key('cmd-l'),
+# 'selrang' + numerals: select_lines,
+# 'salty' + numerals: select_until,
+
+# 'shockey': Key('cmd-shift-enter'),
+# 'shockoon': Key('cmd-right enter'),
+# 'sprinkoon' + numerals: jump_to_eol_and(lambda: press('enter')),

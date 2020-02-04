@@ -20,5 +20,7 @@ ctx.keymap({
     'insert work e-mail': ['adwillis@uw.edu'],
 
     'generalized investors': ['generalized inverses'],
-    
+
+    'insert vertical space': ['\\vspace{}', Key('left')]
+
 })

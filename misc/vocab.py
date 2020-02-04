@@ -8,6 +8,7 @@ ctx.vocab = [
     # important to keep this in alphabetical order!
     # 'batch effects',
 
+    'Alon',
     'amplicon',
     'anova',
 
@@ -23,11 +24,14 @@ ctx.vocab = [
     'conda install',
     'conda activate',
     'confirmatory',
-    'contig', 'contigs',
+    'contig',
+    'contigs',
     'corncob',
+    'covariate',
 
     'Daniela',
     'deconvolve',
+    'department',
     'denoising',
     'devtools',
     'divnet',
@@ -56,7 +60,10 @@ ctx.vocab = [
 
     'lambda',
 
+    'MAG',
+    'MAGs',
     'Mauricio',
+    'Meren',
     'metadata',
     'metagenome',
     'metagenomic',
@@ -66,6 +73,8 @@ ctx.vocab = [
     'microbiome',
     'misc',
     'missingness',
+    'misspecified',
+    'misspecify',
     'mock',
     'modeling',
 
@@ -79,26 +88,32 @@ ctx.vocab = [
     'penalization',
     'Perlman',
     'phyla',
+    'phylum',
+    'phyloseq',
     'phylodivnet',
     'Poisson',
+    'Prevotella',
     'p-value',
     'p-values',
 
-    'quantile', 'quantiles', 
+    'quantile', 'quantiles',
 
     'rarefying',
     'reparameterize', 'reparameterizing', 'reparameterization',
     'resample', 'resamples',
 
     'rightarrow',
+    'row',
 
     'semidefinite',
     'semiparametric',
+    'stat',
 
     'talon',
     'taxa',
     'taxon',
     'tibble',
+    'tidyverse',
     # 'theorem', 'theorems',
 
     'underdispersion',
@@ -118,10 +133,16 @@ ctx.vocab = [
 ]
 
 ctx.vocab_remove = [
+
+    'Alana',
+
     'Brian',
+
+    'covariant',
 
     'Daniel',
     'Daniella',
+    'Department',
 
     'filer',
     'Fareham'
@@ -137,11 +158,30 @@ ctx.vocab_remove = [
 
     'Kaunda',
 
+    "Lander",
+    'Landa',
+    'lender',
+    "Lavender",
+
+    'mag',
+    'Max',
+    'Manx',
+    'Marion',
+
     'P value',
     'P values',
+    'Philo',
+    'Phalen',
     'Pohlmann',
 
+    'rose',
+    'Rose',
+    'Rowe',
+
+    'Shirley',
+
     'tax',
+    'Tanya',
     'Tobias',
     'Theron',
 

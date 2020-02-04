@@ -14,6 +14,8 @@ keymap = {
 
     'D-plier': 'dplyr',
 
+    'hit ana': 'Gitana',
+
     'hi dimensional': 'high dimensional',
 
     'Lavender': 'lambda',
@@ -24,8 +26,7 @@ keymap = {
 
 
     'poison': 'Poisson',
-    'python': 'python', 
-
+    'python': 'python',
 
     'stat Dev lab': 'Stat Div Lab',
 

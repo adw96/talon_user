@@ -43,6 +43,7 @@ def sentence_text(m):
     text = join_words(parse_words(m))
     insert(text.capitalize())
 
+
 def word(m):
     text = join_words(list(map(parse_word, m.dgnwords[0]._words)))
     insert(text.lower())
@@ -133,7 +134,7 @@ ctx.keymap({
     'sento <dgndictation> [over]': sentence_text,
     'comma <dgndictation> [over]': [', ', text],
     'space <dgndictation> [over]': [' ', text],
-    'word <dgnwords>': word,
+    # 'word <dgnwords>': word,
 
     '(%s)+ [<dgndictation>]' % (' | '.join(formatters)): FormatText,
 
@@ -166,7 +167,7 @@ ctx.keymap({
     '(dot dot | dotdot)': '..',
 
     'args': ['()', Key('left')],
-    'prex': ['()', Key('left')],
+    # 'prex': ['()', Key('left')],
     'brax': ['[]', Key('left')],
     'kirk': ['{}', Key('left')], # [' {}', Key('left enter enter up tab')],
     'empty array': '[]',
@@ -185,7 +186,6 @@ ctx.keymap({
     # amy mods
     'plus': '+',
     'lambo': '->',
-    'call': '()',
     'indirect': '&',
     'dereference': '*',
     'equeft': ' = ',
