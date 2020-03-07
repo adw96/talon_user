@@ -53,7 +53,7 @@ keymap = {
     'podo': delayed_click,
     'dubbo': delayed_dubclick,
     'trippo': delayed_tripclick,
-    # 'drag': mouse_drag,
-    # 'release': mouse_release,
+    # # 'drag': mouse_drag,
+    # # 'release': mouse_release,
 }
 ctx.keymap(keymap)

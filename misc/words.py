@@ -16,7 +16,7 @@ keymap = {
 
     'hit ana': 'Gitana',
 
-    'hi dimensional': 'high dimensional',
+    '(hi dimensional) | (Heideman shall)': 'high dimensional',
 
     'Lavender': 'lambda',
     'Lander': 'lambda',
@@ -30,9 +30,6 @@ keymap = {
 
     'stat Dev lab': 'Stat Div Lab',
 
-    # 'Theron': 'theorem',
-    # 'filer': 'phyla',
-    # 'Tobias': 'to bias',
 }
 
 ctx.keymap(keymap)
