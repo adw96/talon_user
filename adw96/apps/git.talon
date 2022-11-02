@@ -7,5 +7,8 @@ run git clone: "git clone "
 run git commit:
     "git commit -m ''"
     key(left)
-run git pull: "git pull"
+run git pull:
+    "git pull\n"
 run git push: "git push"
+run git remote: "git remote -v\n"
+run git remove: "git rm "

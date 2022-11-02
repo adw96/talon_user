@@ -9,6 +9,9 @@ insert bold text:
     insert("\\textbf{}")
     key(left)
 insert item: "\\item "
+amy comment:
+    insert("\\amy{}")
+    key(left)
 (framework itemize) | (itemize framework):
     key(cmd-left)
     insert("\\begin{}")
