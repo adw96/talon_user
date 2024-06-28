@@ -1,4 +1,3 @@
-biosketch: insert("Biosketch") #ffs
 swipe: ", "
 tinker: "`"
 colon space: ": "
@@ -12,6 +11,7 @@ apostrophe ess: "'s"
 # gravy:
 #     insert("```")
 # (dot dot | dotdot): ".."
+# biosketch: insert("Biosketch") #ffs
 (ellipses | dotdotdot | dot dot dot): "..."
 args:
 	insert("()")

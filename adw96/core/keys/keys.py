@@ -186,7 +186,7 @@ symbol_key_words = {
     "R angle": ">",
     "right angle": ">",
     "greater than": ">",
-    "star": "*",
+    "asterisk": "*",
     "insert caret": "^", # changed sept 5 2022
     "spike": "|",
     "dubquote": '"',
@@ -210,7 +210,7 @@ simple_keys = [
     "enter",
     "escape",
     # "home",
-    "insert",
+    # "insert", # june 2 2023
     "pagedown",
     "pageup",
     "space",

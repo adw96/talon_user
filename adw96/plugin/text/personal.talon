@@ -6,3 +6,9 @@ insert personal email:
     insert("amy.willis7@gmail.com")
 insert home address:
     insert("3534 NE 90th St")
+insert you dub placeholder:
+    insert("adwillis@uw.edu")
+    key(tab)
+    insert("nonsense")
+    key(enter)
+    

@@ -2,11 +2,10 @@ os: mac
 app: RStudio
 -
 
-# rambo: insert(" <- ")
 rambo:                           key("alt--")
 pipe that:                       key("cmd-shift-m")
 run that:                        key("cmd-enter")
-insert knitter chunk:            key("cmd-alt-i")
+insert chunk:                   key("cmd-alt-i")
 indent that:                    key("cmd-i")
 comment that:                  key("cmd-shift-c")
 
