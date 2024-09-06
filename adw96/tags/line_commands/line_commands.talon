@@ -7,13 +7,21 @@ go [to line] <number>: edit.jump_line(number)
 go [to line] <number> end:
     edit.jump_line(number)
     edit.line_end()
-(comment | trundle) [that]: code.toggle_comment()
-(comment | trundle) [line] <number>:
+comment [that]: code.toggle_comment()
+comment [line] <number>:
     user.select_range(number, number)
     code.toggle_comment()
-(comment | trundle) <number> until <number>:
+comment <number> until <number>:
     user.select_range(number_1, number_2)
     code.toggle_comment()
+#july 8 2024 - remove trundle as not specific enough
+# (comment | trundle) [that]: code.toggle_comment()
+# (comment | trundle) [line] <number>:
+#     user.select_range(number, number)
+#     code.toggle_comment()
+# (comment | trundle) <number> until <number>:
+#     user.select_range(number_1, number_2)
+#     code.toggle_comment()
 clear [line] <number>:
     edit.jump_line(number)
     user.select_range(number, number)
