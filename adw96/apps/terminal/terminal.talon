@@ -15,10 +15,7 @@ tag(): terminal
 abandon that:
     key(ctrl-c)
 (go to | open) talon directory:
-    insert("cd ~/.talon/user/adw96")
-    key(enter)
-open atom here:
-    insert("atom .")
+    insert("cd /Users/amy/.talon/user/talon_user/adw96")
     key(enter)
 open finder here:
     insert("open .")

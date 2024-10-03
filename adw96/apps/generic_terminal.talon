@@ -6,9 +6,8 @@ lisa all:
     user.terminal_list_all_directories()
 katie [<user.text>]:
     user.terminal_change_directory(text or "")
-atticus:
-    "atom ."
-    key(enter)
+lisa size:
+    "ls -l --block-size=M "
 # katie root: user.terminal_change_directory_root()
 # clear screen: user.terminal_clear_screen()
 # run last: user.terminal_run_last()
